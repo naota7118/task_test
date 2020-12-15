@@ -11,6 +11,8 @@
 |
 */
 
+// /にアクセスしたらwelcomeに処理を渡すという設定
+viewファイルはresourceというフォルダの中のviewsというフォルダの中にある
 Route::get('/', function () {
     return view('welcome');
 });
