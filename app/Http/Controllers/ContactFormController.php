@@ -140,6 +140,22 @@ class ContactFormController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $contact = ContactForm::find($id);
+
+        // フォームに入力した値がとってこれる
+        // Railsは->の部分が.だった。@post.saveとしていた
+        $contact->your_name = $request->input('your_name');
+        $contact->title = $request->input('title');
+        $contact->email = $request->input('email');
+        $contact->url = $request->input('url');
+        $contact->gender = $request->input('gender');
+        $contact->age = $request->input('age');
+        $contact->contact = $request->input('contact');
+
+        $contact->save();
+
+        // Railsでいうところのredirect to〜
+        return redirect('contact/index');
     }
 
     /**
