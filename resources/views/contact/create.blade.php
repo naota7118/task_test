@@ -15,12 +15,13 @@
                     @endif
 
                     createです
-                    <form method="POST" action="">
+                    <form method="POST" action="{{route('contact.store')}}">
+                    @csrf
                     氏名
                     <input type="text" name="your_name">
                     <br>
                     件名
-                    <input type="text" name="your_name">
+                    <input type="text" name="title">
                     <br>
                     メールアドレス
                     <input type="email" name="email">
